@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { createRef, useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useRef } from 'react';
 import { domElementsStore } from '../../stores/domElementsStore';
 import { mainStore } from '../../stores/mainStore';
 import { Context } from '../..';
@@ -13,8 +13,8 @@ import sent from '../../assets/sent.png';
 import mic from '../../assets/mic.png';
 
 export const InputArea = observer(() => {
-  const inputRef = createRef<HTMLTextAreaElement>();
-  const areaRef = createRef<HTMLDivElement>();
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const areaRef = useRef<HTMLDivElement>(null);
   const inputPlaceholder = 'Write a message...';
   const [message, setMessage] = useState<string>('');
 
@@ -88,7 +88,11 @@ export const InputArea = observer(() => {
           onKeyPress={handlePressEnter} />
       </div>
       <div className={styles.rightCol}>
-        <button> <img loading="lazy" className={styles.icon} src={stickers} alt={'stickers icon'} onClick={openModal} /></button>
+        <button> <img loading="lazy" className={styles.icon} src={stickers} alt={'stickers icon'} onMouseEnter={() => {
+          setTimeout(() => {
+            openModal()
+          }, 100)
+        }} /></button>
         {message.length ?
           <button><img loading="lazy" className={styles.icon} src={sent} alt={'sent icon'} onClick={handleSending} /></button>
           :

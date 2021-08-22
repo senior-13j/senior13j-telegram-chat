@@ -26,13 +26,6 @@ export const Stickers = memo(({ isOpen, setModal }: { isOpen: boolean, setModal:
 
   const stickers = [senya, lady_vampire, rickandmorty, santa, trump, flame, teacher, shaun, jessica];
 
-  const addStickersToChat = () => {
-    for (let i = 0; i < 1000; i++) {
-      mainStore.addMessageToChat('sticker', dayjs(), '', '', user?.photoURL ?? '', stickers[2]);
-    }
-    closeModal();
-  }
-
   const chooseSticker = (index: number) => {
     const sticker = stickers.find((item, i) => { return index === i });
     mainStore.addMessageToChat('sticker', dayjs(), '', '', user?.photoURL ?? '', sticker);
@@ -44,9 +37,6 @@ export const Stickers = memo(({ isOpen, setModal }: { isOpen: boolean, setModal:
       <Modal isOpen={isOpen} onClose={closeModal}>
         <div className={styles.modal}>
           {stickers.map((sticker, index) => <div key={`${Math.random() + sticker.length}-index${index}`}><img loading="lazy" src={sticker} alt={`${sticker} sticker`} onClick={() => { chooseSticker(index) }} className={styles.sticker} /></div>)}
-        </div>
-        <div className={styles.addStickersBtn}>
-          <button onClick={addStickersToChat}>Add 1000 stickers to chat</button>
         </div>
       </Modal>
     </div>

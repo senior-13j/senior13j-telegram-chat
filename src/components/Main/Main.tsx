@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { createRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { domElementsStore } from '../../stores/domElementsStore';
 import { mainStore } from '../../stores/mainStore';
 import { Header } from '../Header/Header';
@@ -7,8 +7,8 @@ import { MessageComponent } from '../Message/Message';
 import styles from './main.module.css';
 
 export const Main = observer(() => {
-  const mainRef = createRef<HTMLDivElement>();
-  const messagesInnerRef = createRef<HTMLDivElement>();
+  const mainRef = useRef<HTMLDivElement>(null);
+  const messagesInnerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     domElementsStore.initializeMain(mainRef);
