@@ -13,3 +13,15 @@
   width: 35px !important;
   height: 35px !important;
 }
+
+@media (max-width: 350px) {
+  .avatar img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .chatAvatar {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}

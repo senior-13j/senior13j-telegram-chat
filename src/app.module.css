@@ -49,3 +49,23 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media (max-width: 350px) {
+  .appHeader {
+    padding-left: 5px;
+  }
+
+  .logoContainer img {
+    width: 26px;
+    height: 26px;
+    margin-right: 5px;
+  }
+
+  .logoContainer h2 {
+    font-size: 20px !important;
+  }
+
+  .signOut {
+    margin: 5px !important;
+  }
+}

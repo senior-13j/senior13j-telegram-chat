@@ -63,3 +63,31 @@
   font-size: 12px;
   word-spacing: 1px;
 }
+
+@media (max-width: 350px) {
+  .header .headerName {
+    font-size: 12px;
+  }
+
+  .header .headerStatus {
+    font-size: 11px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+
+  .info {
+    margin-left: 5px;
+  }
+
+  .rightCol {
+    padding-right: 5px !important;
+  }
+
+  .leftCol {
+    padding-left: 5px;
+  }
+}

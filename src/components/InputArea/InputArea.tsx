@@ -45,6 +45,10 @@ export const InputArea = observer(() => {
   };
 
   const handleSending = () => {
+    if (!message.length || !message.trim()) {
+      setMessage('');
+      return;
+    }
     mainStore.addMessageToChat('text', dayjs(), message, user?.displayName ?? '', user?.photoURL ?? '');
     setMessage('');
     // reRender with default height of input area

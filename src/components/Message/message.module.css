@@ -112,3 +112,31 @@
   bottom: 2px;
   right: 5px;
 }
+
+@media (max-width: 350px) {
+  .sticker {
+    width: 100px;
+  }
+
+  .messageTime {
+    font-size: 10px;
+  }
+
+  .checking {
+    width: 18px;
+    height: 18px;
+  }
+
+  .showStickerDate {
+    right: -80px;
+    width: 70px;
+  }
+
+  .messageBody {
+    max-width: 180px;
+    position: relative;
+    font-size: 12px;
+    min-width: 90px;
+    margin-bottom: 5px;
+  }
+}

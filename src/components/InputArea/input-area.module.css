@@ -5,7 +5,7 @@
   width: 100%;
   background-color: white;
   border-top: 1px solid #cccccc;
-  min-width: 350px;
+  min-width: 240px;
   z-index: 5;
   font-family: inherit;
   /* the same value as max-height in .input plus 10 px for padding effect at top*/
@@ -100,4 +100,35 @@
 
 .input:focus {
   outline: none;
+}
+
+@media (max-width: 350px) {
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* placeholder color */
+  ::-webkit-input-placeholder {
+    color: #a0a0a0;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+  }
+  ::-moz-placeholder {
+    color: #a0a0a0;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+  } /* Firefox 19+ */
+  :-moz-placeholder {
+    color: #a0a0a0;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+  } /* Firefox 18- */
+  :-ms-input-placeholder {
+    color: #a0a0a0;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+  }
 }
