@@ -22,7 +22,7 @@ export const MessageComponent = memo(({ message }: MessageProps) => {
           onMouseLeave={() => { setShowStickerDate(false) }}>
           <img loading="lazy" src={message.sticker} alt="sticker" className={styles.sticker} />
           <div className={`${showStickerDate ? styles.showStickerDate : styles.hideStickerDate}`}>
-            <span className={styles.messageTime}>{message.date.format('hh:mm')}</span>
+            <span className={styles.messageTime}>{message.date.format('hh:mm a')}</span>
             <span><img loading="lazy" src={checking} alt={'checking'} className={styles.checking} /></span>
           </div>
         </div>
@@ -36,7 +36,7 @@ export const MessageComponent = memo(({ message }: MessageProps) => {
         </div>
         <div className={styles.messageBody}>
           <p>{message.text}</p>
-          <span className={styles.messageTime}>{message.date.format('hh:mm')}</span>
+          <span className={styles.messageTime}>{message.date.format('hh:mm a')}</span>
           <span><img loading="lazy" src={checking} alt={'checking'} className={styles.checking} /></span>
         </div>
       </div >

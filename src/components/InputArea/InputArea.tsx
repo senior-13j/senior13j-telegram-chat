@@ -36,22 +36,28 @@ export const InputArea = observer(() => {
     reRenderComponents();
   };
 
-  const handlePressEnter = (event: any) => {
-    const keyCode = event.code || event.key;
-    if (keyCode === 'Enter') {
-      mainStore.addMessageToChat('text', dayjs(), message, user?.displayName ?? '', user?.photoURL ?? '');
-      setMessage('');
-      // reRender with default height of input area
-      domElementsStore.updateAllElementsHeight('30px');
-    }
-  }
+  const autoGrow = () => {
+    if (!inputRef.current) return;
+    inputRef.current.style.height = "20px";
+    const newLengthString = `${inputRef.current.scrollHeight}px`;
+    inputRef.current.style.height = Number.parseInt(newLengthString) >= 45 ? newLengthString : '20px';
+    domElementsStore.updateAllElementsHeight(newLengthString);
+  };
 
   const handleSending = () => {
     mainStore.addMessageToChat('text', dayjs(), message, user?.displayName ?? '', user?.photoURL ?? '');
     setMessage('');
     // reRender with default height of input area
     domElementsStore.updateAllElementsHeight('30px');
-  }
+  };
+
+  const handlePressEnter = (event: any) => {
+    const keyCode = event.code || event.key;
+    if (keyCode === 'Enter') {
+      handleSending();
+      event.target.blur();
+    }
+  };
 
   useEffect(() => {
     domElementsStore.initializeArea(areaRef);
@@ -62,14 +68,6 @@ export const InputArea = observer(() => {
     }
     /* eslint-disable-next-line*/
   }, [areaRef, inputRef]);
-
-  const autoGrow = () => {
-    if (!inputRef.current) return;
-    inputRef.current.style.height = "20px";
-    const newLengthString = `${inputRef.current.scrollHeight}px`;
-    inputRef.current.style.height = Number.parseInt(newLengthString) >= 45 ? newLengthString : '20px';
-    domElementsStore.updateAllElementsHeight(newLengthString);
-  }
 
   return (
     <div className={styles.area} ref={areaRef}>
