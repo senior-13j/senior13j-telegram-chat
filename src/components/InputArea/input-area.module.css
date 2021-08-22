@@ -1,0 +1,103 @@
+.area {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #cccccc;
+  min-width: 350px;
+  z-index: 5;
+  font-family: inherit;
+  /* the same value as max-height in .input plus 10 px for padding effect at top*/
+  max-height: 200px;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.area::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.area {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  margin: 10px;
+  margin-bottom: 10px;
+}
+
+.area button {
+  background: transparent;
+  border: none;
+}
+
+.area button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.leftCol,
+.rightCol {
+  display: flex;
+  align-items: flex-end;
+}
+
+.leftCol {
+  flex-grow: 2;
+  padding-top: 5px;
+}
+
+/* placeholder color */
+::-webkit-input-placeholder {
+  color: #a0a0a0;
+  font-family: "Roboto", sans-serif;
+}
+::-moz-placeholder {
+  color: #a0a0a0;
+  font-family: "Roboto", sans-serif;
+} /* Firefox 19+ */
+:-moz-placeholder {
+  color: #a0a0a0;
+  font-family: "Roboto", sans-serif;
+} /* Firefox 18- */
+:-ms-input-placeholder {
+  color: #a0a0a0;
+  font-family: "Roboto", sans-serif;
+}
+
+.input {
+  width: 100%;
+  margin: 0 5px;
+  font-size: 14px;
+  padding: 0 5px 10px 5px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  align-self: center;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  max-height: 190px;
+  overflow: hidden;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.input::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.input {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.input:focus {
+  outline: none;
+}

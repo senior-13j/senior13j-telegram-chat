@@ -1,0 +1,114 @@
+.message {
+  width: fit-content;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  margin: 5px 0;
+  font-family: inherit;
+}
+
+.stickerBody:hover {
+  cursor: pointer;
+}
+
+.stickerMessage {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin: 5px 0;
+  font-family: inherit;
+}
+
+.showStickerDate {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: -70px;
+  display: inline-block;
+  display: flex;
+  background: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 5px;
+  width: 60px;
+  height: 20px;
+}
+
+.showStickerDate .messageTime {
+  color: black;
+}
+
+.hideStickerDate {
+  display: none;
+}
+
+.sticker {
+  width: 200px;
+}
+
+.authorAvatar {
+  margin: 10px 0;
+  margin-right: 10px;
+  padding: 5px;
+  position: relative;
+  top: 15px;
+  left: 5px;
+}
+
+.stickerAvatar {
+  margin: 10px 0;
+  margin-right: 15px;
+  padding-right: 0;
+}
+
+.messageBody {
+  background: white;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  word-wrap: break-word;
+  max-width: 250px;
+  position: relative;
+  font-size: 14px;
+  min-width: 100px;
+  margin-bottom: 5px;
+}
+
+.messageBody::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: -4px;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent transparent white;
+  transform: rotate(280deg) skew(5deg, 15deg);
+  border-style: solid;
+  border-width: 9px;
+}
+
+.messageBody p {
+  margin: 0;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+.messageTime {
+  position: absolute;
+  font-size: 12px;
+  color: #a0a0a0;
+  bottom: 3px;
+  right: 30px;
+}
+
+.checking {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}

@@ -1,0 +1,65 @@
+.header {
+  height: 45px;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  margin: 0 15px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.leftCol,
+.rightCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftCol {
+  padding-left: 20px;
+}
+
+.rightCol {
+  padding-right: 30px;
+}
+
+.rightCol button {
+  background: transparent;
+  border: none;
+}
+
+.rightCol button:hover:not(.rightCol button:last-child) {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.info {
+  margin-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  min-width: 108px;
+}
+
+.headerName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.headerStatus {
+  color: #a0a0a0;
+  font-size: 12px;
+  word-spacing: 1px;
+}

@@ -1,0 +1,33 @@
+.stickers {
+  font-family: "Roboto", sans-serif;
+}
+
+.modal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 350px;
+}
+
+.sticker {
+  width: 100px;
+  margin: 5px;
+}
+
+.sticker:hover {
+  cursor: pointer;
+}
+
+.addStickersBtn {
+  border: none;
+  background-color: #8189f2;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.addStickersBtn button:hover {
+  transform: scale(1);
+}

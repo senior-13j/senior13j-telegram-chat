@@ -1,0 +1,50 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  height: 250px;
+  padding: 1rem;
+  /* gradient */
+  background: linear-gradient(
+    207deg,
+    rgba(63, 94, 251, 0.7) 10%,
+    rgba(252, 70, 107, 1) 80%
+  );
+  border: 1px solid grey;
+  border-radius: 25px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container:hover {
+  /* gradient */
+  background: linear-gradient(
+    230deg,
+    rgba(63, 94, 251, 0.7) 10%,
+    rgba(252, 70, 107, 1) 80%
+  );
+}
+
+.button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(256, 256, 256, 0.8);
+  color: black;
+  box-shadow: none;
+  font-family: inherit;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: rgba(63, 94, 251, 0.7);
+}

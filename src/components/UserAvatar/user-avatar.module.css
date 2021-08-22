@@ -1,0 +1,15 @@
+.avatar {
+  font-family: inherit;
+}
+
+.avatar img {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+}
+
+.chatAvatar {
+  width: 35px !important;
+  height: 35px !important;
+}
