@@ -48,3 +48,16 @@
   cursor: pointer;
   color: rgba(63, 94, 251, 0.7);
 }
+
+@media (max-width: 410px) {
+  .button {
+    width: 150px;
+    font-size: 12px;
+  }
+
+  .container {
+    width: 210px;
+    height: 120px;
+    padding: 0.5rem;
+  }
+}

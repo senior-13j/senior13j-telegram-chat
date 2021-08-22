@@ -90,11 +90,7 @@ export const InputArea = observer(() => {
           onKeyPress={handlePressEnter} />
       </div>
       <div className={styles.rightCol}>
-        <button> <img loading="lazy" className={styles.icon} src={stickers} alt={'stickers icon'} onMouseEnter={() => {
-          setTimeout(() => {
-            openModal()
-          }, 100)
-        }} /></button>
+        <button> <img loading="lazy" className={styles.icon} src={stickers} alt={'stickers icon'} onClick={openModal} /></button>
         {message.length ?
           <button><img loading="lazy" className={styles.icon} src={sent} alt={'sent icon'} onClick={handleSending} /></button>
           :

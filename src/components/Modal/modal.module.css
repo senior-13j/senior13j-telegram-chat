@@ -4,7 +4,7 @@
   right: 5px;
   bottom: 6%;
   min-width: 360px;
-  min-height: 40%;
+  min-height: 340px;
   padding: 5px;
   border-radius: 5px;
   background: white;
@@ -23,5 +23,8 @@
 @media (max-width: 350px) {
   .modal {
     min-width: 120px;
+    min-height: 120px;
+    max-height: fit-content;
+    max-width: fit-content;
   }
 }
