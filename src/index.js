@@ -20,7 +20,12 @@ firebase.initializeApp({
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-export const Context = createContext(null);
+const initValue = {
+  auth,
+  firestore,
+};
+
+export const Context = createContext(initValue);
 
 render(
   <StrictMode>

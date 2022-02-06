@@ -1,9 +1,7 @@
 import { Dispatch, SetStateAction, useContext, memo } from 'react';
 import { Modal } from '../Modal/Modal';
-import { mainStore } from '../../stores/mainStore';
 import { Context } from '../..';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import dayjs from 'dayjs';
 import styles from './stickers.module.css';
 import senya from '../../stickers/senya.webp';
 import lady_vampire from '../../stickers/lady_vampire.webp';
@@ -14,10 +12,11 @@ import flame from '../../stickers/flame.webp';
 import teacher from '../../stickers/teacher.webp';
 import shaun from '../../stickers/shaunthesheep.webp';
 import jessica from '../../stickers/jessica.webp';
+import firebase from "firebase";
 
 export const Stickers = memo(({ isOpen, setModal }: { isOpen: boolean, setModal: Dispatch<SetStateAction<boolean>> }) => {
 
-  const { auth } = useContext<any>(Context);
+  const { auth, firestore } = useContext(Context);
   const [user] = useAuthState(auth);
 
   const closeModal = () => {
@@ -28,7 +27,15 @@ export const Stickers = memo(({ isOpen, setModal }: { isOpen: boolean, setModal:
 
   const chooseSticker = (index: number) => {
     const sticker = stickers.find((item, i) => { return index === i });
-    mainStore.addMessageToChat('sticker', dayjs(), '', '', user?.photoURL ?? '', sticker);
+    firestore.collection("messages").add({
+      uid: user?.uid,
+      displayName: user?.displayName,
+      photoURL: user?.photoURL,
+      type: "sticker",
+      sticker: sticker,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+    // mainStore.addMessageToChat('sticker', dayjs(), '', '', user?.photoURL ?? '', sticker);
     closeModal();
   };
 
